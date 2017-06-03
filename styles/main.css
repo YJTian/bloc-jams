@@ -5,14 +5,14 @@
 }
 
 html {
- height: 100%; 
+ height: 100%;
  font-size: 100%;
 }
 
 body {
- font-family: 'Open Sans'; 
- color: white;             
- min-height: 100%;  
+ font-family: 'Open Sans';
+ color: white;
+ min-height: 100%;
 }
 
 .navbar {
@@ -21,7 +21,7 @@ body {
 }
 
 .navbar > .logo {
- position: relative; 
+ position: relative;
  left: 2rem;
  cursor: pointer;
 }
@@ -35,7 +35,7 @@ body {
  color: white;
  text-decoration: none;
  }
- 
+
 .links-container .navbar-link {
  display: table-cell;
  position: relative;
@@ -63,7 +63,7 @@ body {
 
 .hero-content {
  position: relative;
- min-height: 600px;  
+ min-height: 600px;
  background-image: url(../assets/images/bloc_jams_bg.jpg);
  background-repeat: no-repeat;
  background-position: center center;
@@ -71,19 +71,19 @@ body {
 }
 
 .hero-content .hero-title {
- position: absolute;            
- top: 40%;                
+ position: absolute;
+ top: 40%;
  -webkit-transform: translateY(-50%);
  -moz-transform: translateY(-50%);
  -ms-transform: translateY(-50%);
  transform: translateY(-50%);
- width: 100%;                  
- text-align: center;          
- font-size: 4rem;              
- font-weight: 300;             
- text-transform: uppercase;    
- letter-spacing: 0.5rem;       
- text-shadow: 1px 1px 0px rgb(58,23,63); 
+ width: 100%;
+ text-align: center;
+ font-size: 4rem;
+ font-weight: 300;
+ text-transform: uppercase;
+ letter-spacing: 0.5rem;
+ text-shadow: 1px 1px 0px rgb(58,23,63);
 }
 
 .selling-points {
@@ -94,6 +94,7 @@ body {
 
 .point {
  position: relative;
+ width: 33.3%;
  padding: 2rem;
  text-align: center;
 }
@@ -126,12 +127,12 @@ max-width: 64rem;
          padding-left: 1rem;
          padding-right: 1rem;
      }
-     .column.full { width: 100%; }
-     .column.two-thirds { width: 66.7%; }
-     .column.half { width: 50%; }
-     .column.third { width: 33.3%; }
-     .column.fourth { width: 25%; }
-     .column.flow-opposite { float: right; }
+     .column .full { width: 100%; }
+     .column .two-thirds { width: 66.7%; }
+     .column .half { width: 50%; }
+     .column .third { width: 33.3%; }
+     .column .fourth { width: 25%; }
+     .column .flow-opposite { float: right; }
 }
 
 /* Large screens (1024px) */
@@ -148,12 +149,3 @@ html { font-size: 120%; }
 .clearfix::after {
    clear: both;
 }
-
-
-
-
-
-
-
-
-
