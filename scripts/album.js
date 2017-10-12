@@ -133,9 +133,9 @@ window.onload = function() {
     songListContainer.addEventListener('mouseover', function(event) {
          if (event.target.parentElement.className === 'album-view-song-item') {
            var songItem = getSongItem(event.target);
-+            if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong) {
-+                songItem.innerHTML = playButtonTemplate;
-+            }
+           if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong) {
+              songItem.innerHTML = playButtonTemplate;
+          }
          }
      });
 
