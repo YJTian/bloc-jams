@@ -52,31 +52,32 @@ var createSongRow = function(songNumber, songName, songLength) {
      + '</tr>'
      ;
 
-     return template;
+     return $(template);
  };
 
 
-var albumTitle = document.getElementsByClassName('album-view-title')[0];
-var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-var albumImage = document.getElementsByClassName('album-cover-art')[0];
-var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 var currentlyPlayingSong = null;
 
 
 var setCurrentAlbum = function(album) {
+  var $albumTitle = $('.album-view-title');
+  var $albumArtist = $('.album-view-artist');
+  var $albumReleaseInfo = $('.album-view-release-info');
+  var $albumImage = $('.album-cover-art');
+  var $albumSongList = $('.album-view-song-list');
+   $albumTitle.text(album.title);
+   $albumArtist.text(album.artist);
+   $albumReleaseInfo.text(album.year + ' ' + album.label);
+   $albumImage.attr('src', album.albumArtUrl);
 
-    albumTitle.firstChild.nodeValue = album.title;
-    albumArtist.firstChild.nodeValue = album.artist;
-    albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
-    albumImage.setAttribute('src', album.albumArtUrl);
-
-    albumSongList.innerHTML = '';
+   $albumSongList.empty();
 
     for (var i = 0; i < album.songs.length; i++) {
-        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+      var $newRow = createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+      $albumSongList.append($newRow);
     }
 };
 
@@ -84,7 +85,7 @@ var findParentByClassName = function(currentElement, targetClass) {
     if (currentElement) {
         var currentElementsParent = currentElement.parentElement;
         while (currentElementsParent.className !== targetClass && currentElementsParent.className !== null) {
-            currentElementsParent = currentElemtnsParent.parentElement;
+            currentElementsParent = currentElementsParent.parentElement;
         }
         return currentElementsParent;
     }
@@ -129,7 +130,7 @@ var songRows = document.getElementsByClassName('album-view-song-item');
 
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
-
+    var $albumImage = $('.album-cover-art');
     songListContainer.addEventListener('mouseover', function(event) {
          if (event.target.parentElement.className === 'album-view-song-item') {
            var songItem = getSongItem(event.target);
@@ -143,7 +144,7 @@ window.onload = function() {
 
     var index = 0;
 
-albumImage.addEventListener("click", function(event) {
+$albumImage.click(function(event) {
     setCurrentAlbum(albums[index]);
     index++;
     if (index == albums.length){
@@ -160,7 +161,7 @@ for (var i = 0; i < songRows.length; i++) {
        }
      });
      songRows[i].addEventListener('click', function(event) {
-       clickHandler(event.target);x
+       clickHandler(event.target);
      });
       }
 };
