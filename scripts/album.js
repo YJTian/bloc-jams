@@ -140,9 +140,9 @@ window.onload = function() {
     songListContainer.addEventListener('mouseover', function(event) {
          if (event.target.parentElement.className === 'album-view-song-item') {
            var songItem = getSongItem(event.target);
-+            if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong) {
-+                songItem.innerHTML = playButtonTemplate;
-+            }
+           if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong) {
+               songItem.innerHTML = playButtonTemplate;
+           }
          }
      });
 
@@ -167,7 +167,7 @@ for (var i = 0; i < songRows.length; i++) {
        }
      });
      songRows[i].addEventListener('click', function(event) {
-       clickHandler(event.target);x
+       clickHandler(event.target);
      });
       }
 };
