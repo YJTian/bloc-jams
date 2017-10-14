@@ -111,7 +111,6 @@ var setCurrentAlbum = function(album) {
   $albumArtist.text(album.artist);
   $albumReleaseInfo.text(album.year + ' ' + album.label);
   $albumImage.attr('src', album.albumArtUrl);
-
   $albumSongList.empty();
 
   for (var i = 0; i < album.songs.length; i++) {
@@ -124,6 +123,9 @@ $(document).ready(function() {
     setCurrentAlbum(albumPicasso);
 });
 
+var albums = [albumMarconi, albumFacelift, albumPicasso];
+var index = 0;
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
 albumImage.addEventListener("click", function(event) {
     setCurrentAlbum(albums[index]);
     index++;
