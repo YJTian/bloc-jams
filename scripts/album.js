@@ -84,7 +84,7 @@ var findParentByClassName = function(currentElement, targetClass) {
     if (currentElement) {
         var currentElementsParent = currentElement.parentElement;
         while (currentElementsParent.className !== targetClass && currentElementsParent.className !== null) {
-            currentElementsParent = currentElemtnsParent.parentElement;
+            currentElementsParent = currentElementsParent.parentElement;
         }
         return currentElementsParent;
     }
@@ -160,7 +160,7 @@ for (var i = 0; i < songRows.length; i++) {
        }
      });
      songRows[i].addEventListener('click', function(event) {
-       clickHandler(event.target);x
+       clickHandler(event.target);
      });
       }
 };
